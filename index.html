@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LoomCraft Textiles</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f8f6f2;
+      color:#222;
+      overflow-x:hidden;
+    }
+
+    header{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(255,255,255,0.9);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#8b5e3c;
+    }
+
+    nav a{
+      text-decoration:none;
+      margin-left:30px;
+      color:#333;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#8b5e3c;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:120px 8% 80px;
+      gap:50px;
+    }
+
+    .hero-text{
+      flex:1;
+    }
+
+    .hero-text h1{
+      font-size:70px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text h1 span{
+      color:#8b5e3c;
+    }
+
+    .hero-text p{
+      font-size:18px;
+      color:#555;
+      margin-bottom:35px;
+      max-width:550px;
+      line-height:1.8;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 32px;
+      background:#8b5e3c;
+      color:white;
+      border-radius:50px;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .btn:hover{
+      background:#6f4629;
+      transform:translateY(-3px);
+    }
+
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:550px;
+      border-radius:30px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#666;
+    }
+
+    .collections{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      transition:0.4s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:25px;
+    }
+
+    .card-content h3{
+      margin-bottom:10px;
+      font-size:24px;
+    }
+
+    .card-content p{
+      color:#666;
+      line-height:1.7;
+    }
+
+    .stats{
+      background:#8b5e3c;
+      color:white;
+      border-radius:30px;
+      padding:60px 30px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:30px;
+      text-align:center;
+    }
+
+    .stat h2{
+      font-size:50px;
+      margin-bottom:10px;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:30px;
+      box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .about-text h2{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      color:#555;
+      line-height:1.9;
+      margin-bottom:25px;
+    }
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:30px;
+      margin-top:60px;
+    }
+
+    @media(max-width:950px){
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:50px;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      nav{
+        display:none;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">LoomCraft</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Collections</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-text">
+      <h1>Luxury <span>Textiles</span><br>Crafted With Elegance</h1>
+
+      <p>
+        Discover premium fabrics, handcrafted textile collections,
+        and modern fashion materials designed for brands,
+        designers, and luxury clothing businesses.
+      </p>
+
+      <a href="#" class="btn">Explore Collection</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop" alt="">
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <div class="section-title">
+      <h2>Our Collections</h2>
+      <p>Premium textile categories for modern fashion brands</p>
+    </div>
+
+    <div class="collections">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="card-content">
+          <h3>Cotton Fabric</h3>
+          <p>
+            Soft, breathable and high-quality cotton fabrics
+            perfect for premium apparel manufacturing.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="card-content">
+          <h3>Silk Materials</h3>
+          <p>
+            Elegant silk collections designed for luxury garments,
+            fashion designers, and premium exports.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="card-content">
+          <h3>Designer Textile</h3>
+          <p>
+            Exclusive designer fabrics with modern textures,
+            patterns, and vibrant colors.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+    <div class="stats">
+
+      <div class="stat">
+        <h2>15+</h2>
+        <p>Years Experience</p>
+      </div>
+
+      <div class="stat">
+        <h2>500+</h2>
+        <p>Premium Designs</p>
+      </div>
+
+      <div class="stat">
+        <h2>120+</h2>
+        <p>Global Clients</p>
+      </div>
+
+      <div class="stat">
+        <h2>98%</h2>
+        <p>Client Satisfaction</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+
+    <div class="about">
+
+      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200&auto=format&fit=crop" alt="">
+
+      <div class="about-text">
+        <h2>Modern Textile Manufacturing</h2>
+
+        <p>
+          LoomCraft combines traditional craftsmanship with
+          advanced textile production techniques to create
+          world-class fabric collections for international clients.
+        </p>
+
+        <p>
+          Our focus on quality, sustainability, and luxury aesthetics
+          helps fashion brands stand out in competitive markets.
+        </p>
+
+        <a href="#" class="btn">Learn More</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 LoomCraft Textiles — Premium Fabric Solutions
+    <br>Manthan's Portfolio Project
+  </footer>
+
+</body>
+</html>
